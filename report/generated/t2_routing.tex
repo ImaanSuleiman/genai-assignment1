@@ -1,1 +1,16 @@
-\textit{\textcolor{red}{[Task 2 routing table: run the experiments, then \texttt{python -m genai.report\_assets}]}}
+\begin{table}[t]
+\centering
+\caption{Task 2 hard routing: oracle vs.\ predicted routing on the test set. 42 entries (0.1\%) were misrouted; the mean PSNR loss on those was 25.63 dB.}
+\label{tab:t2_route}
+\footnotesize
+\begin{tabular}{lrrrrr}
+\toprule
+Condition & PSNR in & PSNR oracle & PSNR pred. & SSIM oracle & SSIM pred. \\
+\midrule
+Clean & 100.00 & 100.00 & 99.66 & 1.000 & 0.999 \\
+Salt-and-pepper & 16.38 & 24.63 & 24.63 & 0.778 & 0.778 \\
+Gaussian blur & 27.78 & 24.36 & 24.37 & 0.764 & 0.764 \\
+Occlusion & 13.61 & 21.00 & 21.01 & 0.690 & 0.690 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,1 +1,17 @@
-\textit{\textcolor{red}{[Optuna summary: run the experiments, then \texttt{python -m genai.report\_assets}]}}
+\begin{table}[t]
+\centering
+\caption{Optuna studies: trial counts, best objective value and the final selected configuration.}
+\label{tab:optuna}
+\footnotesize
+\begin{tabular}{lrrrrp{6.2cm}}
+\toprule
+Study & Trials & Done & Pruned & Best obj. & Selected configuration \\
+\midrule
+Task 1 UDAE & 25 & 12 & 13 & 0.4119 & lr=0.000262, batch\_size=16, latent\_ch=32, base=48, dropout=0.0206, alpha=0.532 \\
+Task 2 classifier & 20 & 14 & 6 & 0.9891 & lr=0.00271, batch\_size=32, channels=small, dropout=0.0226, weight\_decay=2e-05 \\
+Task 2 specialists & 15 & 13 & 2 & 0.4388 & lr=0.000874, latent\_ch=64, base=48, batch\_size=16, alpha=0.697 \\
+Task 3 soft MoE & 20 & 12 & 8 & 0.1907 & lr=0.000528, tau=1.37, lam\_ce=0.0274, lam\_bal=0.105, lam\_l1=0.649 \\
+Task 4 cGAN & 15 & 10 & 5 & 0.5626 & lr\_g=0.00036, lr\_d=0.000304, batch\_size=8, base=64, dropout=0.0969, style\_dim=16, lam\_l1=197 \\
+\bottomrule
+\end{tabular}
+\end{table}

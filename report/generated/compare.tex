@@ -1,1 +1,17 @@
-\textit{\textcolor{red}{[compare: run the experiments, then \texttt{python -m genai.report\_assets}]}}
+\begin{table}[t]
+\centering
+\caption{PSNR of the four restoration systems on the same test manifest.}
+\label{tab:compare}
+\footnotesize
+\begin{tabular}{lrrrr}
+\toprule
+PSNR (dB) & T1 universal & T2 oracle & T2 predicted & T3 soft MoE \\
+\midrule
+Clean & 24.94 & 100.00 & 99.66 & 53.64 \\
+Salt-and-pepper & 24.76 & 24.63 & 24.63 & 25.18 \\
+Gaussian blur & 24.84 & 24.36 & 24.37 & 25.62 \\
+Occlusion & 21.30 & 21.00 & 21.01 & 21.84 \\
+\textbf{All corrupted} & 23.63 & 23.33 & 23.33 & 24.22 \\
+\bottomrule
+\end{tabular}
+\end{table}

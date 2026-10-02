@@ -1,1 +1,16 @@
-\textit{\textcolor{red}{[Task 1 table: run the experiments, then \texttt{python -m genai.report\_assets}]}}
+\begin{table}[t]
+\centering
+\caption{Task 1 test results by input condition (``in'' = corrupted input vs.\ clean target, ``out'' = UDAE output).}
+\label{tab:t1_type}
+\footnotesize
+\begin{tabular}{lrrrrr}
+\toprule
+Condition & PSNR in & PSNR out & SSIM in & SSIM out & L1 out \\
+\midrule
+Clean & 100.00 & 24.94 & 1.000 & 0.800 & 0.0416 \\
+Salt-and-pepper & 16.38 & 24.76 & 0.412 & 0.787 & 0.0425 \\
+Gaussian blur & 27.78 & 24.84 & 0.828 & 0.780 & 0.0420 \\
+Occlusion & 13.61 & 21.30 & 0.747 & 0.715 & 0.0570 \\
+\bottomrule
+\end{tabular}
+\end{table}

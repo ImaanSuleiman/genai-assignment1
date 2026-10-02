@@ -1,1 +1,17 @@
-\textit{\textcolor{red}{[Task 2 classifier table: run the experiments, then \texttt{python -m genai.report\_assets}]}}
+\begin{table}[t]
+\centering
+\caption{Task 2 classifier test metrics.}
+\label{tab:t2_cls}
+\footnotesize
+\begin{tabular}{lrrrr}
+\toprule
+Class & Precision & Recall & F1 & Support \\
+\midrule
+Clean & 0.993 & 0.995 & 0.994 & 3669 \\
+Salt-and-pepper & 1.000 & 1.000 & 1.000 & 11007 \\
+Gaussian blur & 0.999 & 1.000 & 0.999 & 11007 \\
+Occlusion & 1.000 & 0.998 & 0.999 & 11007 \\
+\textbf{Macro / overall acc.} & 0.998 & 0.998 & 0.998 & acc 0.999 \\
+\bottomrule
+\end{tabular}
+\end{table}

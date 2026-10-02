@@ -1,1 +1,21 @@
-\textit{\textcolor{red}{[Task 1 severity table: run the experiments, then \texttt{python -m genai.report\_assets}]}}
+\begin{table}[t]
+\centering
+\caption{Task 1 test results by corruption and fixed severity level.}
+\label{tab:t1_level}
+\footnotesize
+\begin{tabular}{lrrrrr}
+\toprule
+Corruption & Severity & PSNR in & PSNR out & SSIM in & SSIM out \\
+\midrule
+Salt-and-pepper & low & 20.13 & 24.92 & 0.626 & 0.797 \\
+Salt-and-pepper & medium & 15.87 & 24.82 & 0.372 & 0.789 \\
+Salt-and-pepper & high & 13.14 & 24.53 & 0.237 & 0.774 \\
+Gaussian blur & low & 32.27 & 25.14 & 0.947 & 0.800 \\
+Gaussian blur & medium & 26.73 & 25.08 & 0.820 & 0.790 \\
+Gaussian blur & high & 24.33 & 24.31 & 0.716 & 0.751 \\
+Occlusion & low & 16.70 & 22.87 & 0.880 & 0.761 \\
+Occlusion & medium & 13.32 & 21.41 & 0.763 & 0.722 \\
+Occlusion & high & 10.80 & 19.60 & 0.597 & 0.662 \\
+\bottomrule
+\end{tabular}
+\end{table}

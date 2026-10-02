@@ -1,1 +1,18 @@
-\textit{\textcolor{red}{[search space task1\_udae: run the experiments, then \texttt{python -m genai.report\_assets}]}}
+\begin{table}[t]
+\centering
+\caption{Optuna search space for Task 1 UDAE (25 trials, 6 epochs per trial; objective: min val(L1 + (1 - SSIM)) on val manifest).}
+\label{tab:space_task1_udae}
+\footnotesize
+\begin{tabular}{ll}
+\toprule
+Hyper-parameter & Search space \\
+\midrule
+lr & loguniform[1e-4, 3e-3] \\
+batch\_size & categorical[16, 32, 64, 128] \\
+latent\_ch & categorical[8, 16, 32, 64]  (latent = latent\_ch x 8 x 8) \\
+base & categorical[16, 32, 48]  (encoder channels base, 2*base, 4*base, 8*base) \\
+dropout & uniform[0.0, 0.3] \\
+alpha & uniform[0.5, 0.95]  (L1 weight; SSIM weight = 1 - alpha) \\
+\bottomrule
+\end{tabular}
+\end{table}

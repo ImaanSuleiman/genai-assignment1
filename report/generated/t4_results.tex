@@ -1,1 +1,17 @@
-\textit{\textcolor{red}{[Task 4 table: run the experiments, then \texttt{python -m genai.report\_assets}]}}
+\begin{table}[t]
+\centering
+\caption{Task 4 test results against the paired ground-truth sketch. Style-conditioning check: L1 with the correct style 0.1056 vs.\ 0.1467 with a wrong style.}
+\label{tab:t4}
+\footnotesize
+\begin{tabular}{lrrrr}
+\toprule
+Set & PSNR & SSIM & L1 & N \\
+\midrule
+Style 1 & 17.39 & 0.582 & 0.0794 & 619 \\
+Style 2 & 12.34 & 0.450 & 0.1532 & 381 \\
+Style 3 & 18.66 & 0.666 & 0.0649 & 46 \\
+\textbf{All styles (cGAN)} & 15.61 & 0.538 & 0.1056 & 1046 \\
+Grayscale-photo baseline & 6.73 & 0.289 & 0.4155 & 1046 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,1 +1,20 @@
-\textit{\textcolor{red}{[ONNX parity table: run the experiments, then \texttt{python -m genai.report\_assets}]}}
+\begin{table}[t]
+\centering
+\caption{ONNX export check: maximum absolute difference between PyTorch and ONNX Runtime outputs.}
+\label{tab:onnx}
+\footnotesize
+\begin{tabular}{llrrr}
+\toprule
+Model & File & Max abs. diff & MB & Match \\
+\midrule
+universal\_udae & universal\_udae.onnx & 5.1e-07 & 16.05 & yes \\
+classifier & classifier.onnx & 9.3e-10 & 1.18 & yes \\
+specialist\_salt & specialist\_salt.onnx & 3.0e-07 & 16.15 & yes \\
+specialist\_blur & specialist\_blur.onnx & 4.5e-07 & 16.15 & yes \\
+specialist\_occlusion & specialist\_occlusion.onnx & 3.6e-07 & 16.15 & yes \\
+soft\_moe & soft\_moe.onnx & 4.2e-07 & 49.65 & yes \\
+generator & generator.onnx & 2.1e-06 & 117.27 & yes \\
+generator\_batch1 &  & 0.0e+00 &  & yes \\
+\bottomrule
+\end{tabular}
+\end{table}

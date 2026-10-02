@@ -1,1 +1,19 @@
-\textit{\textcolor{red}{[search space task4\_cgan: run the experiments, then \texttt{python -m genai.report\_assets}]}}
+\begin{table}[t]
+\centering
+\caption{Optuna search space for Task 4 cGAN (15 trials, 10 epochs per trial; objective: min val(L1 + (1 - SSIM)) of generated vs paired sketch).}
+\label{tab:space_task4_cgan}
+\footnotesize
+\begin{tabular}{ll}
+\toprule
+Hyper-parameter & Search space \\
+\midrule
+lr\_g & loguniform[1e-4, 1e-3] \\
+lr\_d & loguniform[5e-5, 1e-3] \\
+batch\_size & categorical[4, 8, 16, 32] \\
+base & categorical[32, 48, 64]  (base channel count of G and D) \\
+dropout & uniform[0.0, 0.5]  (generator decoder dropout) \\
+style\_dim & categorical[8, 16, 32]  (style-embedding dimension) \\
+lam\_l1 & loguniform[10, 200]  (L1 reconstruction weight, initial value 100) \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,1 +1,16 @@
-\textit{\textcolor{red}{[t3\_by\_type: run the experiments, then \texttt{python -m genai.report\_assets}]}}
+\begin{table}[t]
+\centering
+\caption{Task 3 soft mixture-of-experts test results.}
+\label{tab:t3_type}
+\footnotesize
+\begin{tabular}{lrrrr}
+\toprule
+Condition & PSNR in & PSNR out & SSIM out & L1 out \\
+\midrule
+Clean & 100.00 & 53.64 & 0.999 & 0.0017 \\
+Salt-and-pepper & 16.38 & 25.18 & 0.803 & 0.0408 \\
+Gaussian blur & 27.78 & 25.62 & 0.807 & 0.0386 \\
+Occlusion & 13.61 & 21.84 & 0.777 & 0.0506 \\
+\bottomrule
+\end{tabular}
+\end{table}

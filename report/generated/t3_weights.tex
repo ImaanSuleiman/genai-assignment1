@@ -1,1 +1,22 @@
-\textit{\textcolor{red}{[t3\_weights: run the experiments, then \texttt{python -m genai.report\_assets}]}}
+\begin{table}[t]
+\centering
+\caption{Average gate weights per true corruption type and severity (test set).}
+\label{tab:t3_w}
+\footnotesize
+\begin{tabular}{lrrrr}
+\toprule
+Condition & $w_0$ id & $w_1$ salt & $w_2$ blur & $w_3$ occl. \\
+\midrule
+clean/- & 0.95 & 0.00 & 0.01 & 0.03 \\
+salt/low & 0.11 & 0.87 & 0.00 & 0.03 \\
+salt/medium & 0.04 & 0.95 & 0.00 & 0.01 \\
+salt/high & 0.02 & 0.97 & 0.00 & 0.01 \\
+blur/low & 0.37 & 0.00 & 0.62 & 0.01 \\
+blur/medium & 0.11 & 0.00 & 0.89 & 0.01 \\
+blur/high & 0.05 & 0.00 & 0.94 & 0.00 \\
+occlusion/low & 0.38 & 0.00 & 0.00 & 0.62 \\
+occlusion/medium & 0.29 & 0.00 & 0.00 & 0.71 \\
+occlusion/high & 0.21 & 0.00 & 0.00 & 0.79 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,1 +1,16 @@
-\textit{\textcolor{red}{[t3\_mixed: run the experiments, then \texttt{python -m genai.report\_assets}]}}
+\begin{table}[t]
+\centering
+\caption{Two simultaneous corruptions (blur+salt-and-pepper, occlusion+blur).}
+\label{tab:t3_mixed}
+\footnotesize
+\begin{tabular}{lrr}
+\toprule
+System & PSNR & SSIM \\
+\midrule
+no restoration & 14.71 & 0.452 \\
+Task 1 universal AE & 19.42 & 0.692 \\
+Task 2 hard routing (predicted) & 18.88 & 0.666 \\
+Task 3 soft MoE & 19.07 & 0.682 \\
+\bottomrule
+\end{tabular}
+\end{table}

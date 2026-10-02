@@ -1,1 +1,16 @@
-\textit{\textcolor{red}{[t3\_health: run the experiments, then \texttt{python -m genai.report\_assets}]}}
+\begin{table}[t]
+\centering
+\caption{Routing health: no branch is inactive when its mean weight and dominance fraction are non-zero.}
+\label{tab:t3_health}
+\footnotesize
+\begin{tabular}{lrrr}
+\toprule
+Branch & Mean weight & Frac. $w>0.5$ & Mean $w$ on other types \\
+\midrule
+identity & 0.253 & 0.139 & 0.175 \\
+salt-expert & 0.279 & 0.298 & 0.000 \\
+blur-expert & 0.247 & 0.280 & 0.002 \\
+occlusion-expert & 0.221 & 0.280 & 0.014 \\
+\bottomrule
+\end{tabular}
+\end{table}

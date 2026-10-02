@@ -1,1 +1,17 @@
-\textit{\textcolor{red}{[search space task2\_classifier: run the experiments, then \texttt{python -m genai.report\_assets}]}}
+\begin{table}[t]
+\centering
+\caption{Optuna search space for Task 2 classifier (20 trials, 5 epochs per trial; objective: max val macro-F1).}
+\label{tab:space_task2_classifier}
+\footnotesize
+\begin{tabular}{ll}
+\toprule
+Hyper-parameter & Search space \\
+\midrule
+lr & loguniform[1e-4, 3e-3] \\
+batch\_size & categorical[16, 32, 64, 128] (balanced: batch/4 per class) \\
+channels & categorical[small(16-128), medium(32-256), large(32-256x2)] \\
+dropout & uniform[0.0, 0.5] \\
+weight\_decay & loguniform[1e-6, 1e-2] \\
+\bottomrule
+\end{tabular}
+\end{table}
