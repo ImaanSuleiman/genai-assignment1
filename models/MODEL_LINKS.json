@@ -1,0 +1,9 @@
+{
+  "universal_udae.onnx": "PASTE_DOWNLOAD_LINK",
+  "classifier.onnx": "PASTE_DOWNLOAD_LINK",
+  "specialist_salt.onnx": "PASTE_DOWNLOAD_LINK",
+  "specialist_blur.onnx": "PASTE_DOWNLOAD_LINK",
+  "specialist_occlusion.onnx": "PASTE_DOWNLOAD_LINK",
+  "soft_moe.onnx": "PASTE_DOWNLOAD_LINK",
+  "generator.onnx": "PASTE_DOWNLOAD_LINK"
+}

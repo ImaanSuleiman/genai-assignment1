@@ -1,0 +1,29 @@
+# Start the complete application:   docker compose up --build
+# Then open:                        http://localhost:8080
+# The ONNX files must be in ./models first (see README: python scripts/download_models.py).
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: app/backend/Dockerfile
+    image: genai-a1-backend
+    volumes:
+      - ./models:/models:ro
+    environment:
+      MODELS_DIR: /models
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"      # direct API + Swagger docs at http://localhost:8000/docs
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: app/frontend
+    image: genai-a1-frontend
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    restart: unless-stopped

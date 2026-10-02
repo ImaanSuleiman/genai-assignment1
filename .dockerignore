@@ -1,0 +1,12 @@
+data
+checkpoints
+outputs
+studies
+mlruns
+mlartifacts
+mlflow.db
+models
+report
+notebooks
+**/node_modules
+.git

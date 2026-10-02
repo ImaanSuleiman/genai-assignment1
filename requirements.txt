@@ -1,0 +1,13 @@
+# Training / evaluation / export (Python 3.10+). On Colab, torch + torchvision are preinstalled.
+torch>=2.2
+torchvision>=0.17
+numpy>=1.26
+opencv-python-headless>=4.9
+pillow>=10.3
+scikit-learn>=1.4
+matplotlib>=3.8
+optuna>=3.6
+mlflow>=2.14
+onnx>=1.16
+onnxruntime>=1.18
+tqdm
