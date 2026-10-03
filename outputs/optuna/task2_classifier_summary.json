@@ -1,0 +1,26 @@
+{
+  "study": "task2_classifier",
+  "search_space": {
+    "lr": "loguniform[1e-4, 3e-3]",
+    "batch_size": "categorical[16, 32, 64, 128] (balanced: batch/4 per class)",
+    "channels": "categorical[small(16-128), medium(32-256), large(32-256x2)]",
+    "dropout": "uniform[0.0, 0.5]",
+    "weight_decay": "loguniform[1e-6, 1e-2]"
+  },
+  "n_trials": 20,
+  "trial_states": {
+    "COMPLETE": 14,
+    "PRUNED": 6
+  },
+  "best_value": 0.98910808081781,
+  "best_params": {
+    "lr": 0.0027051668818999287,
+    "batch_size": 32,
+    "channels": "small",
+    "dropout": 0.022613644455269033,
+    "weight_decay": 2.0013420622879995e-05
+  },
+  "best_trial": 5,
+  "trial_epochs": 5,
+  "objective": "max val macro-F1"
+}

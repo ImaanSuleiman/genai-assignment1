@@ -1,0 +1,8 @@
+{
+  "epochs_shown": [
+    "epoch_001",
+    "epoch_050",
+    "epoch_100",
+    "epoch_150"
+  ]
+}

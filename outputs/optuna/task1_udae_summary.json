@@ -1,0 +1,28 @@
+{
+  "study": "task1_udae",
+  "search_space": {
+    "lr": "loguniform[1e-4, 3e-3]",
+    "batch_size": "categorical[16, 32, 64, 128]",
+    "latent_ch": "categorical[8, 16, 32, 64]  (latent = latent_ch x 8 x 8)",
+    "base": "categorical[16, 32, 48]  (encoder channels base, 2*base, 4*base, 8*base)",
+    "dropout": "uniform[0.0, 0.3]",
+    "alpha": "uniform[0.5, 0.95]  (L1 weight; SSIM weight = 1 - alpha)"
+  },
+  "n_trials": 25,
+  "trial_states": {
+    "COMPLETE": 12,
+    "PRUNED": 13
+  },
+  "best_value": 0.41194309423799097,
+  "best_params": {
+    "lr": 0.0002623080480007082,
+    "batch_size": 16,
+    "latent_ch": 32,
+    "base": 48,
+    "dropout": 0.020557798582711062,
+    "alpha": 0.5323935135720659
+  },
+  "best_trial": 12,
+  "trial_epochs": 6,
+  "objective": "min val(L1 + (1 - SSIM)) on val manifest"
+}

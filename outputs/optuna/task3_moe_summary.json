@@ -1,0 +1,27 @@
+{
+  "study": "task3_moe",
+  "search_space": {
+    "lr": "loguniform[1e-5, 1e-3]  (fine-tuning LR; warm-up LR = 3 x lr)",
+    "tau": "loguniform[0.3, 3.0]",
+    "lam_ce": "loguniform[0.01, 1.0]",
+    "lam_bal": "loguniform[1e-3, 1.0]",
+    "lam_l1": "uniform[0.5, 0.95]  (L1 weight; SSIM weight = 1 - lam_l1)"
+  },
+  "n_trials": 20,
+  "trial_states": {
+    "COMPLETE": 12,
+    "PRUNED": 8
+  },
+  "best_value": 0.19067181565839314,
+  "best_params": {
+    "lr": 0.0005276846189683864,
+    "tau": 1.3739691451864726,
+    "lam_ce": 0.027366447373914596,
+    "lam_bal": 0.10509751486396296,
+    "lam_l1": 0.6491360393952962
+  },
+  "best_trial": 19,
+  "trial_epochs": 4,
+  "warmup_epochs": 2,
+  "objective": "min val(L1 + (1 - SSIM)); pruned on routing collapse (max mean weight > 0.7 or min < 0.03)"
+}

@@ -1,0 +1,30 @@
+{
+  "study": "task4_cgan",
+  "search_space": {
+    "lr_g": "loguniform[1e-4, 1e-3]",
+    "lr_d": "loguniform[5e-5, 1e-3]",
+    "batch_size": "categorical[4, 8, 16, 32]",
+    "base": "categorical[32, 48, 64]  (base channel count of G and D)",
+    "dropout": "uniform[0.0, 0.5]  (generator decoder dropout)",
+    "style_dim": "categorical[8, 16, 32]  (style-embedding dimension)",
+    "lam_l1": "loguniform[10, 200]  (L1 reconstruction weight, initial value 100)"
+  },
+  "n_trials": 15,
+  "trial_states": {
+    "COMPLETE": 10,
+    "PRUNED": 5
+  },
+  "best_value": 0.5625522436585816,
+  "best_params": {
+    "lr_g": 0.0003596643265887001,
+    "lr_d": 0.0003040211648667333,
+    "batch_size": 8,
+    "base": 64,
+    "dropout": 0.0968884214125121,
+    "style_dim": 16,
+    "lam_l1": 196.68078676634534
+  },
+  "best_trial": 13,
+  "trial_epochs": 10,
+  "objective": "min val(L1 + (1 - SSIM)) of generated vs paired sketch"
+}

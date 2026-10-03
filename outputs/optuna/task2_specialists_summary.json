@@ -1,0 +1,26 @@
+{
+  "study": "task2_specialists",
+  "search_space": {
+    "lr": "loguniform[1e-4, 3e-3]",
+    "latent_ch": "categorical[8, 16, 32, 64]",
+    "base": "categorical[16, 32, 48]",
+    "batch_size": "categorical[16, 32, 64, 128]",
+    "alpha": "uniform[0.5, 0.95]  (L1 weight; SSIM weight = 1 - alpha)"
+  },
+  "n_trials": 15,
+  "trial_states": {
+    "COMPLETE": 13,
+    "PRUNED": 2
+  },
+  "best_value": 0.4388430827985639,
+  "best_params": {
+    "lr": 0.0008739403897971273,
+    "latent_ch": 64,
+    "base": 48,
+    "batch_size": 16,
+    "alpha": 0.6967950069624231
+  },
+  "best_trial": 12,
+  "trial_epochs": 4,
+  "objective": "min mean over 3 specialists of val(L1 + (1 - SSIM))"
+}

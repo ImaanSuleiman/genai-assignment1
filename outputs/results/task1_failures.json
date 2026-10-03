@@ -1,0 +1,82 @@
+{
+  "failure_indices": [
+    11437,
+    11439,
+    11431,
+    11432
+  ],
+  "failures": [
+    {
+      "index": 1143,
+      "corruption": "occlusion",
+      "level": "low",
+      "params": {
+        "type": "occlusion",
+        "n": 1,
+        "rects": [
+          [
+            55,
+            58,
+            98,
+            96
+          ]
+        ],
+        "coverage": 0.0997314453125
+      },
+      "psnr": 9.730196952819824
+    },
+    {
+      "index": 1143,
+      "corruption": "occlusion",
+      "level": "high",
+      "params": {
+        "type": "occlusion",
+        "n": 3,
+        "rects": [
+          [
+            46,
+            5,
+            91,
+            38
+          ],
+          [
+            46,
+            72,
+            105,
+            115
+          ],
+          [
+            88,
+            8,
+            128,
+            51
+          ]
+        ],
+        "coverage": 0.344970703125
+      },
+      "psnr": 9.860321998596191
+    },
+    {
+      "index": 1143,
+      "corruption": "salt",
+      "level": "low",
+      "params": {
+        "type": "salt",
+        "p": 0.03,
+        "seed": 343645698
+      },
+      "psnr": 10.9338960647583
+    },
+    {
+      "index": 1143,
+      "corruption": "salt",
+      "level": "medium",
+      "params": {
+        "type": "salt",
+        "p": 0.08,
+        "seed": 68490890
+      },
+      "psnr": 12.163305282592773
+    }
+  ]
+}

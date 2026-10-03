@@ -1,6 +1,5 @@
 data/
 checkpoints/
-outputs/
 studies/
 mlruns/
 mlartifacts/
