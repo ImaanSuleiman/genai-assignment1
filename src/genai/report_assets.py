@@ -18,14 +18,15 @@ def esc(s) -> str:
     return str(s).replace("_", r"\_").replace("%", r"\%").replace("&", r"\&").replace("#", r"\#")
 
 
-def table(header, rows, caption, label, colspec=None, small=True) -> str:
+def table(header, rows, caption, label, colspec=None, small=True, wide=False) -> str:
     colspec = colspec or ("l" + "r" * (len(header) - 1))
     body = "\n".join(" & ".join(str(c) for c in r) + r" \\" for r in rows)
     size = "\\footnotesize" if small else ""
     head = " & ".join(header)
-    return (f"\\begin{{table}}[t]\n\\centering\n\\caption{{{caption}}}\n\\label{{{label}}}\n"
+    env = "table*" if wide else "table"
+    return (f"\\begin{{{env}}}[t]\n\\centering\n\\caption{{{caption}}}\n\\label{{{label}}}\n"
             f"{size}\n\\begin{{tabular}}{{{colspec}}}\n\\toprule\n"
-            f"{head} \\\\\n\\midrule\n{body}\n\\bottomrule\n\\end{{tabular}}\n\\end{{table}}\n")
+            f"{head} \\\\\n\\midrule\n{body}\n\\bottomrule\n\\end{{tabular}}\n\\end{{{env}}}\n")
 
 
 def pending(name: str) -> str:
@@ -61,11 +62,11 @@ def build(report_dir: Path):
         # per-study search-space table
         sp = table(["Hyper-parameter", "Search space"], [[esc(k), esc(v)] for k, v in s["search_space"].items()],
                    f"Optuna search space for {nm} ({s['n_trials']} trials, {s.get('trial_epochs', '?')} epochs per trial; objective: {esc(s.get('objective', ''))}).",
-                   f"tab:space_{st}", "ll")
+                   f"tab:space_{st}", "lp{5.6cm}")
         write(f"space_{st}", sp)
     write("optuna_summary", table(["Study", "Trials", "Done", "Pruned", "Best obj.", "Selected configuration"], rows,
                                   "Optuna studies: trial counts, best objective value and the final selected configuration.",
-                                  "tab:optuna", "lrrrrp{6.2cm}") if rows else pending("Optuna summary"))
+                                  "tab:optuna", "lrrrrp{9cm}", wide=True) if rows else pending("Optuna summary"))
     for st in ("task1_udae", "task2_classifier", "task2_specialists", "task3_moe", "task4_cgan"):
         if not need(gen / f"space_{st}.tex"):
             write(f"space_{st}", pending(f"search space {st}"))

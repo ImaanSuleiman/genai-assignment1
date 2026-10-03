@@ -1,9 +1,9 @@
-\begin{table}[t]
+\begin{table*}[t]
 \centering
 \caption{Optuna studies: trial counts, best objective value and the final selected configuration.}
 \label{tab:optuna}
 \footnotesize
-\begin{tabular}{lrrrrp{6.2cm}}
+\begin{tabular}{lrrrrp{9cm}}
 \toprule
 Study & Trials & Done & Pruned & Best obj. & Selected configuration \\
 \midrule
@@ -14,4 +14,4 @@ Task 3 soft MoE & 20 & 12 & 8 & 0.1907 & lr=0.000528, tau=1.37, lam\_ce=0.0274, 
 Task 4 cGAN & 15 & 10 & 5 & 0.5626 & lr\_g=0.00036, lr\_d=0.000304, batch\_size=8, base=64, dropout=0.0969, style\_dim=16, lam\_l1=197 \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
